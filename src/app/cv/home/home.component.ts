@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { SessionStorageService } from 'ngx-webstorage';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -10,7 +11,7 @@ import { Observable } from 'rxjs';
 export class HomeComponent implements OnInit {
   items: Observable<any[]>;
 
-  constructor(private firestore: AngularFirestore) {
+  constructor(private firestore: AngularFirestore, private sessionStorage: SessionStorageService) {
     this.items = firestore.collection('items').valueChanges()
   }
 
