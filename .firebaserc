@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "generate-cv-angular": {
+      "hosting": {
+        "generate-cv-angular": [
+          "generate-cv-angular"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "generate-cv-angular"
+  }
+}

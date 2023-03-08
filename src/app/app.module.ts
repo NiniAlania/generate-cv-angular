@@ -8,6 +8,8 @@ import { EducationComponent } from './cv/education/education.component';
 import { WorkExperienceComponent } from './cv/work-experience/work-experience.component';
 import { ResumeComponent } from './cv/resume/resume.component';
 import { GeneralInfoComponent } from './cv/general-info/general-info.component';
+import { environment } from '../environments/environment';
+import { AngularFireModule } from '@angular/fire/compat';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { GeneralInfoComponent } from './cv/general-info/general-info.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase),
   ],
   providers: [],
   bootstrap: [AppComponent]
