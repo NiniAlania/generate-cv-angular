@@ -1,1 +1,54 @@
-<p>general-info works!</p>
+<form>
+    <aside class="top">
+        <aside>
+            <label for="name">სახელი</label>
+            <div>
+                <input type="text" id="name" name="name" placeholder="შეიყვანეთ თქვენი სახელი" > 
+                <span></span>
+            </div>
+            <h6>მინიმუმ 2 ასო, ქართული ასოები</h6>
+        </aside>
+        <aside>
+            <label for="surname">გვარი</label>
+            <div>
+                <input type="text" id="surname" name="surname" placeholder="შეიყვანეთ თქვენი გვარი" >
+                <span></span>
+            </div>
+            <h6>მინიმუმ 2 ასო, ქართული ასოები</h6>
+        </aside>
+    </aside>
+    <aside class="bottom">
+        <aside class="photo">
+            <h4>პირადი ფოტოს ატვირთვა</h4>
+            <div> 
+                <label for="image">ატვირთვა</label>
+                <input type="file" id="image" name="image">
+                <span></span>
+            </div>
+        </aside>
+        <aside>
+            <label for="description">ჩემ შესახებ(არასავალდებულო)</label>
+            <textarea id="description" cols="30" rows="10" name="description" placeholder="ზოგადი ინფო შენ შესახებ" maxlength="300"></textarea>
+        </aside>
+    
+        <aside>
+            <label class="email-label" for="email">ელ.ფოსტა</label>
+            <div>
+                <input type="email" id="email" name="email" placeholder="შეიყვანეთ თქვენი ელ.ფოსტა">
+                <span></span>
+            </div>
+            <h6>უნდა მთავრდებოდეს @redberry.ge-ით</h6>
+        </aside>
+        <aside>
+            <label class="number-label" for="phone">მობილურის ნომერი</label>
+            <div>
+                <input type="tel" id="phone" name="phone" placeholder="შეიყვანეთ თქვენი მობილურის ნომერი">
+                <span></span>
+            </div>
+            <h6>უნდა აკმაყოფილებდეს ქართული მობილური ნომრის ფორმატს</h6>
+        </aside>
+    </aside>
+</form>
+<div class="button-div">
+    <button class="next-button-1st">შემდეგი</button>
+</div>

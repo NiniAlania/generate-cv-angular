@@ -11,6 +11,9 @@ import { GeneralInfoComponent } from './cv/general-info/general-info.component';
 import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire/compat';
 import { NgxWebstorageModule } from 'ngx-webstorage';
+import { HeaderComponent } from './shared/header/header.component';
+import { BackgroundLeftComponent } from './shared/background-left/background-left.component';
+import { BackgroundRightComponent } from './shared/background-right/background-right.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { NgxWebstorageModule } from 'ngx-webstorage';
     EducationComponent,
     WorkExperienceComponent,
     ResumeComponent,
-    GeneralInfoComponent
+    GeneralInfoComponent,
+    HeaderComponent,
+    BackgroundLeftComponent,
+    BackgroundRightComponent
   ],
   imports: [
     BrowserModule,

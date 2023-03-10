@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --primary-font:'Montserrat', sans-serif;
+}
+
+
+header {
+    display: flex;
+}
+
+header .header-left {
+    width: 71.21px;
+    border-radius: 50%;
+}
+
+header .header-left div {
+    width: 40px;
+    height: 40px;
+    margin-top: 45px;
+    border-radius: 50%;
+    background: #F9F9F9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vector-container {
+    width: 40px;
+    height: 40px;
+    margin-left: -500px;
+    border-radius: 50%;
+    background: #F9F9F9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.vector {
+    width: 9.21px;
+    height: 16px;
+    margin-left: 13px;
+    margin-top: 10px;
+}
+
+header .header-left img {
+    width: 9.21px;
+    height: 16px;
+}
+
+header .header-right {
+    width: 80%;
+}
+
+
+header .header-right .top { 
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+header .header-right .top h3 {
+    width: 179px;
+    height: 29px;
+    margin-top:  47px;
+    font-size: 24px;
+    color: #1a1a1a;
+    font-family: var(--primary-font);
+    font-weight: 700;
+    line-height: 29.3px;
+}
+
+header .header-right .top h5 {
+    width: 29px;
+    height: 24px;
+    margin-top: 49px;
+    font-size: 20px;
+    color:  #1a1a1a;
+    font-family: var(--primary-font);
+    font-weight: 400;
+    line-height: 23.86px;
+}
+
+header .header-right .bottom hr {
+    width: 100%;
+}
