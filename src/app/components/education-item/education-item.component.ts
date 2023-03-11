@@ -9,7 +9,7 @@ import { defaultEducation, Education } from 'src/app/models/education.model';
 })
 export class EducationItemComponent implements OnInit {
 
-  @Input() education: Education = defaultEducation;
+  @Input() education: Education = defaultEducation();
   @Output() educationChanged = new EventEmitter<Education>();
   
 

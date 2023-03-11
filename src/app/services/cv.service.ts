@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { SessionStorageService } from 'ngx-webstorage';
 import { BehaviorSubject } from 'rxjs';
+import { CV } from '../models/cv.model';
 import { defaultEducation, Education } from '../models/education.model';
 import { defaultExperience, Experience } from '../models/experience.model';
 import { defaultProfile, Profile } from '../models/profile.model';
@@ -10,15 +11,15 @@ import { defaultProfile, Profile } from '../models/profile.model';
   providedIn: 'root'
 })
 export class CvService {
-  private profileSource = new BehaviorSubject<Profile>(defaultProfile);
-  private educationSource = new BehaviorSubject<Education[]>([defaultEducation]);
-  private workExperienceSource = new BehaviorSubject<Experience[]>([defaultExperience]);
+  private profileSource = new BehaviorSubject<Profile>(defaultProfile());
+  private educationSource = new BehaviorSubject<Education[]>([defaultEducation()]);
+  private workExperienceSource = new BehaviorSubject<Experience[]>([defaultExperience()]);
 
   profile = this.profileSource.asObservable();
   education = this.educationSource.asObservable();
   workExperience = this.workExperienceSource.asObservable();
 
-  constructor(private sessionStorage: SessionStorageService, firestore: AngularFirestore) { }
+  constructor(private sessionStorage: SessionStorageService, private firestore: AngularFirestore) { }
 
   setProfile(profile: Profile) {
     this.sessionStorage.store('profile', profile);
@@ -57,13 +58,21 @@ export class CvService {
     this.sessionStorage.clear('profile');
     this.sessionStorage.clear('education');
     this.sessionStorage.clear('workExperience');
-    this.profileSource.next(defaultProfile);
-    this.educationSource.next([defaultEducation]);
-    this.workExperienceSource.next([defaultExperience]);
+    this.profileSource.next(defaultProfile());
+    this.educationSource.next([defaultEducation()]);
+    this.workExperienceSource.next([defaultExperience()]);
   }
 
   saveCV() {
-    // Save to firestore
+    const cv:CV = { 
+      profile: this.profileSource.value,
+      educations: this.educationSource.value,
+      workExperiences: this.workExperienceSource.value
+    }
+
+    this.firestore.collection('cvs').add(cv).then(() => {
+      console.log('added');
+    });
     
   }
 }

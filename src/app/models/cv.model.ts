@@ -4,6 +4,6 @@ import { Profile } from './profile.model';
 
 export type CV = {
     profile: Profile;
-    education: Education[];
-    experience: Experience[];
+    educations: Education[];
+    workExperiences: Experience[];
 }

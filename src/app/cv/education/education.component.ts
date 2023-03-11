@@ -9,7 +9,7 @@ import { CvService } from 'src/app/services/cv.service';
   styleUrls: ['./education.component.css']
 })
 export class EducationComponent implements OnInit {
-  educations: Education[] = [defaultEducation]
+  educations: Education[] = [defaultEducation()]
 
   constructor(private cvService: CvService, private router: Router) { 
     cvService.education.subscribe((educations) => {
@@ -29,7 +29,7 @@ export class EducationComponent implements OnInit {
   }
 
   onAddEducation() {
-    this.cvService.setEducation([...this.educations, Object.assign({}, defaultEducation)]);
+    this.cvService.setEducation([...this.educations, defaultEducation()]);
   }
 
   prevPage() {
@@ -37,6 +37,7 @@ export class EducationComponent implements OnInit {
   }
 
   nextPage() {
+    this.cvService.saveCV();
     this.router.navigate(['/resume']);
   }
 

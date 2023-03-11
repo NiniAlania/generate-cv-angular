@@ -9,7 +9,7 @@ import { CvService } from 'src/app/services/cv.service';
   styleUrls: ['./general-info.component.css']
 })
 export class GeneralInfoComponent implements OnInit {
-  profile: Profile = defaultProfile;
+  profile: Profile = defaultProfile();
 
   constructor(private cvService: CvService, private router: Router) {
     cvService.profile.subscribe((profile) => {

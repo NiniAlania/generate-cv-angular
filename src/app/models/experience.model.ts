@@ -6,10 +6,12 @@ export type Experience = {
     description: string;
 }
 
-export const defaultExperience: Experience = {
-    position: '',
-    employer: '',
-    startDate: '',
-    endDate: '',
-    description: ''
+export const defaultExperience = (): Experience => {
+    return {
+        position: '',
+        employer: '',
+        startDate: '',
+        endDate: '',
+        description: ''
+    }
 }

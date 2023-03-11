@@ -7,7 +7,7 @@ import { defaultExperience, Experience } from 'src/app/models/experience.model';
   styleUrls: ['./work-experience-item.component.css']
 })
 export class WorkExperienceItemComponent implements OnInit {
-  @Input() workExperience: Experience = defaultExperience;
+  @Input() workExperience: Experience = defaultExperience();
   @Output() workExperienceChanged = new EventEmitter<Experience>();
 
   constructor() { }

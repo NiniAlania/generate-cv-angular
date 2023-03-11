@@ -9,7 +9,7 @@ import { CvService } from 'src/app/services/cv.service';
   styleUrls: ['./work-experience.component.css']
 })
 export class WorkExperienceComponent implements OnInit {
-  workExperiences: Experience[] = [defaultExperience]
+  workExperiences: Experience[] = [defaultExperience()]
 
   constructor(private cvService: CvService, private router: Router) {
     cvService.workExperience.subscribe((workExperiences) => {
@@ -28,7 +28,7 @@ export class WorkExperienceComponent implements OnInit {
   }
 
   onAddExperience() {
-    this.cvService.setWorkExperience([...this.workExperiences, Object.assign({}, defaultExperience)]);
+    this.cvService.setWorkExperience([...this.workExperiences, defaultExperience()]);
   }
 
   prevPage() {

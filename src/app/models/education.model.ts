@@ -5,9 +5,11 @@ export type Education = {
     description: string;
 }
 
-export const defaultEducation: Education = {
-    institution: '',
-    startDate: '',
-    endDate: '',
-    description: ''
+export const defaultEducation = (): Education => {
+    return {
+        institution: '',
+        startDate: '',
+        endDate: '',
+        description: ''
+    }
 }
