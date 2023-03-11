@@ -14,6 +14,7 @@ import { NgxWebstorageModule } from 'ngx-webstorage';
 import { HeaderComponent } from './shared/header/header.component';
 import { BackgroundLeftComponent } from './shared/background-left/background-left.component';
 import { BackgroundRightComponent } from './shared/background-right/background-right.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { BackgroundRightComponent } from './shared/background-right/background-r
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
-    NgxWebstorageModule.forRoot()
+    NgxWebstorageModule.forRoot(),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
