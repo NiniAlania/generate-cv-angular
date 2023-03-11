@@ -1,5 +1,9 @@
 <main>
-    <app-background-left></app-background-left>
-    <app-background-right></app-background-right>
+    <ng-container *ngIf="isFormPage; else default">
+        <app-background-left></app-background-left>
+        <app-background-right></app-background-right>
+    </ng-container>
+    <ng-template #default>
+        <router-outlet></router-outlet>
+    </ng-template>
 </main>
-

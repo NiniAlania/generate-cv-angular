@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { HeaderService } from 'src/app/services/header.service';
 
 @Component({
   selector: 'app-header',
@@ -6,8 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  pageProgress = '';
 
-  constructor() { }
+  pageTitle: Observable<string>;
+
+  constructor(private headerService: HeaderService) {
+    headerService.pageProgress.subscribe((progress) => {
+      this.pageProgress = progress;
+    });
+
+    this.pageTitle = headerService.pageTitle;
+  }
 
   ngOnInit(): void {
   }

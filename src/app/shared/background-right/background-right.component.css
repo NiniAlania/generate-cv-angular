@@ -16,7 +16,7 @@
 .bottom div {
     width: 42px;
     height: 42px;
-    background-image: url('../../../assets/sparkle.png');
+    background-image: url('/assets/sparkle.png');
     margin-bottom: 100px;
     margin-left: 78px;
 }
