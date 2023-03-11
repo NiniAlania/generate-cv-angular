@@ -26,12 +26,12 @@ export class CvService {
   }
 
   setEducation(education: Education[]) {
-    this.sessionStorage.store('education', education);
+    this.sessionStorage.store('education', education.filter((e) => !Object.keys(e).every(key => e[key as keyof Education] === '')));
     this.educationSource.next(education);
   }
 
   setWorkExperience(workExperience: Experience[]) {
-    this.sessionStorage.store('workExperience', workExperience);
+    this.sessionStorage.store('workExperience', workExperience.filter((e) => !Object.keys(e).every(key => e[key as keyof Experience] === '')));
     this.workExperienceSource.next(workExperience);
   }
 

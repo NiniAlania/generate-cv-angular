@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { defaultProfile, Profile } from 'src/app/models/profile.model';
 import { CvService } from 'src/app/services/cv.service';
 
@@ -10,7 +11,7 @@ import { CvService } from 'src/app/services/cv.service';
 export class GeneralInfoComponent implements OnInit {
   profile: Profile = defaultProfile;
 
-  constructor(private cvService: CvService) {
+  constructor(private cvService: CvService, private router: Router) {
     cvService.profile.subscribe((profile) => {
       this.profile = profile;
     })  
@@ -37,6 +38,10 @@ export class GeneralInfoComponent implements OnInit {
       }
     }
     reader.readAsDataURL(image);
+  }
+
+  nextPage() {
+    this.router.navigate(["/work-experience"]);
   }
 
 }

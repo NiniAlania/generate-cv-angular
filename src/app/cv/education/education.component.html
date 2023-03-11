@@ -1,1 +1,12 @@
-<p>education works!</p>
+<ng-container *ngFor="let education of educations; index as i">
+    <app-education-item [education]="education" 
+    (educationChanged)="onEducationChanged($event, i)">
+    </app-education-item>
+</ng-container>
+<aside class="top-button-edu">
+    <button (click)="onAddEducation()" class="add-education">მეტი გამოცდილების დამატება</button>
+</aside>
+<aside class="bottom-button-edu">
+    <button (click)="prevPage()" class="back-button-3rd">უკან</button>
+    <button (click)="nextPage()" class="finish-button-3rd">დასრულება</button>
+</aside>

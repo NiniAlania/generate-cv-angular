@@ -1,0 +1,31 @@
+<section class="school">
+    <aside class="top-education">
+        <label for="education-input" class="education-label">სასწავლებელი</label>
+        <div>
+            <input [(ngModel)]="education.institution" (ngModelChange)="onInputChange()" type="text" id="education-input" class="education-input" placeholder="სასწავლებელი" >
+            <span></span>
+        </div>
+        <h6>მინიმუმ 2 სიმბოლო</h6>
+    </aside>
+    <aside class="middle-education">
+        <aside class="status-education">
+            <div class="form">
+                <label for="input-status" id="input-status">დაწყების რიცხვი</label>
+                <div>
+                    <input [(ngModel)]="education.startDate" (ngModelChange)="onInputChange()" type="date" id="input-end-date-edu" class="input-end-date-edu">
+                </div>
+            </div>
+        </aside>
+        <aside class="end-date">
+            <label for="input-end-date-edu" id="label-end-date-edu">დამთავრების რიცხვი</label>
+            <div>
+                <input [(ngModel)]="education.endDate" (ngModelChange)="onInputChange()" type="date" id="input-end-date-edu" class="input-end-date-edu">
+            </div>
+        </aside>
+    </aside>
+    <aside class="bottom-education">
+        <label for="education-description" id="education-description-label">განათლების აღწერა</label>
+        <textarea [(ngModel)]="education.description" (ngModelChange)="onInputChange()" id="education-description" class="education-description" cols="30" rows="10" placeholder="გთხოვთ, შეიყვანოთ საქმიანობის აღწერა"></textarea>
+    </aside>
+</section>
+<hr>

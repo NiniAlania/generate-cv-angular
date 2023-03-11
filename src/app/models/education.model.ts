@@ -1,13 +1,13 @@
 export type Education = {
     institution: string;
-    degree: string;
+    startDate: string;
     endDate: string;
     description: string;
 }
 
 export const defaultEducation: Education = {
     institution: '',
-    degree: '',
+    startDate: '',
     endDate: '',
     description: ''
 }

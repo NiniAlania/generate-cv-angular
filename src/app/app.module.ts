@@ -15,6 +15,8 @@ import { HeaderComponent } from './shared/header/header.component';
 import { BackgroundLeftComponent } from './shared/background-left/background-left.component';
 import { BackgroundRightComponent } from './shared/background-right/background-right.component';
 import { FormsModule } from '@angular/forms';
+import { WorkExperienceItemComponent } from './components/work-experience-item/work-experience-item.component';
+import { EducationItemComponent } from './components/education-item/education-item.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { FormsModule } from '@angular/forms';
     GeneralInfoComponent,
     HeaderComponent,
     BackgroundLeftComponent,
-    BackgroundRightComponent
+    BackgroundRightComponent,
+    WorkExperienceItemComponent,
+    EducationItemComponent
   ],
   imports: [
     BrowserModule,
