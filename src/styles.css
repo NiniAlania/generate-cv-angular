@@ -1,1 +1,46 @@
-/* You can add global styles to this file, and also import other style files */
+label.error {
+    color: red !important;
+}
+
+input.error {
+    border-color: red !important;
+}
+
+input.valid {
+    border-color: greenyellow !important;
+}
+
+textarea.error {
+    border-color: red !important;
+}
+
+textarea.valid {
+    border-color: greenyellow !important;
+}
+
+span.error {
+    background-image: url("/assets/red-icon.png");
+    width: 23px;
+    height: 20px;
+    background-repeat: no-repeat;
+    margin-left: 305px;
+    margin-top: 20px;
+}
+
+span.valid {
+    background-image: url("/assets/green-icon.png");
+    width: 23px;
+    height: 20px;
+    background-repeat: no-repeat;
+    margin-left: 305px;
+    margin-top: 20px;
+}
+
+h4.error {
+    color: red !important;
+}
+
+h4.valid {
+    border-color: greenyellow !important;
+}
+

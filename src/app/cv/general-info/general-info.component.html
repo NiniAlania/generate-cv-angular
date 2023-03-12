@@ -1,54 +1,54 @@
-<form>
+<section>
     <aside class="top">
         <aside>
-            <label for="name">სახელი</label>
+            <label [ngClass]="{'error': firstNameFormControl.invalid && (firstNameFormControl.dirty || firstNameFormControl.touched)}" for="name">სახელი</label>
             <div>
-                <input [(ngModel)]="profile.firstName" (ngModelChange)="onInputChange()" type="text" id="name" name="name" placeholder="შეიყვანეთ თქვენი სახელი" > 
-                <span></span>
+                <input [formControl]="firstNameFormControl" [(ngModel)]="profile.firstName" (ngModelChange)="onInputChange()" type="text" id="name" name="name" placeholder="შეიყვანეთ თქვენი სახელი" [ngClass]="{'error': firstNameFormControl.invalid && (firstNameFormControl.dirty || firstNameFormControl.touched), 'valid': firstNameFormControl.valid && (firstNameFormControl.dirty || firstNameFormControl.touched)}">
+                <span [ngClass]="{'error': firstNameFormControl.invalid && (firstNameFormControl.dirty || firstNameFormControl.touched), 'valid': firstNameFormControl.valid && (firstNameFormControl.dirty || firstNameFormControl.touched)}">
+                </span>
             </div>
             <h6>მინიმუმ 2 ასო, ქართული ასოები</h6>
         </aside>
         <aside>
-            <label for="surname">გვარი</label>
+            <label [ngClass]="{'error': lastNameFormControl.invalid && (lastNameFormControl.dirty || lastNameFormControl.touched), 'valid': lastNameFormControl.valid && (lastNameFormControl.dirty || lastNameFormControl.touched)}" for="surname">გვარი</label>
             <div>
-                <input [(ngModel)]="profile.lastName"  (ngModelChange)="onInputChange()" type="text" id="surname" name="surname" placeholder="შეიყვანეთ თქვენი გვარი" >
-                <span></span>
+                <input [formControl]="lastNameFormControl" [(ngModel)]="profile.lastName"  (ngModelChange)="onInputChange()" type="text" id="surname" name="surname" placeholder="შეიყვანეთ თქვენი გვარი" [ngClass]="{'error': lastNameFormControl.invalid && (lastNameFormControl.dirty || lastNameFormControl.touched), 'valid': lastNameFormControl.valid && (lastNameFormControl.dirty || lastNameFormControl.touched)}">
+                <span [ngClass]="{'error': lastNameFormControl.invalid && (lastNameFormControl.dirty || lastNameFormControl.touched), 'valid': lastNameFormControl.valid && (lastNameFormControl.dirty || lastNameFormControl.touched)}"></span>
             </div>
             <h6>მინიმუმ 2 ასო, ქართული ასოები</h6>
         </aside>
     </aside>
     <aside class="bottom">
         <aside class="photo">
-            <h4>პირადი ფოტოს ატვირთვა</h4>
+            <h4 [ngClass]="{'error': photoFormControl.invalid && (photoFormControl.dirty || photoFormControl.touched), 'valid': photoFormControl.valid && (photoFormControl.dirty || photoFormControl.touched)}">პირადი ფოტოს ატვირთვა</h4>
             <div> 
                 <label for="image">ატვირთვა</label>
-                <input (change)="onImageSelected($event)" type="file" id="image" name="image">
-                <span></span>
+                <input [formControl]="photoFormControl" (change)="onImageSelected($event)" type="file" id="image" name="image" [ngClass]="{'error': photoFormControl.invalid && (photoFormControl.dirty || photoFormControl.touched), 'valid': photoFormControl.valid && (photoFormControl.dirty || photoFormControl.touched)}">
+                <span [ngClass]="{'error': photoFormControl.invalid && (photoFormControl.dirty || photoFormControl.touched), 'valid': photoFormControl.valid && (photoFormControl.dirty || photoFormControl.touched)}"></span>
             </div>
         </aside>
         <aside>
-            <label for="description">ჩემ შესახებ(არასავალდებულო)</label>
-            <textarea [(ngModel)]="profile.description"  (ngModelChange)="onInputChange()"  id="description" cols="30" rows="10" name="description" placeholder="ზოგადი ინფო შენ შესახებ" maxlength="300"></textarea>
+            <label [ngClass]="{'error': descriptionFormControl.invalid && (descriptionFormControl.dirty || descriptionFormControl.touched), 'valid': descriptionFormControl.valid && (descriptionFormControl.dirty || descriptionFormControl.touched)}" for="description">ჩემ შესახებ(არასავალდებულო)</label>
+            <textarea [formControl]="descriptionFormControl" [(ngModel)]="profile.description"  (ngModelChange)="onInputChange()"  id="description" cols="30" rows="10" name="description" placeholder="ზოგადი ინფო შენ შესახებ" maxlength="300" [ngClass]="{'error': descriptionFormControl.invalid && (descriptionFormControl.dirty || descriptionFormControl.touched), 'valid': descriptionFormControl.valid && (descriptionFormControl.dirty || descriptionFormControl.touched)}"></textarea>
         </aside>
     
         <aside>
-            <label class="email-label" for="email">ელ.ფოსტა</label>
+            <label [ngClass]="{'error': emailFormControl.invalid && (emailFormControl.dirty || emailFormControl.touched), 'valid': emailFormControl.valid && (emailFormControl.dirty || emailFormControl.touched)}" class="email-label" for="email">ელ.ფოსტა</label>
             <div>
-                <input [(ngModel)]="profile.email"  (ngModelChange)="onInputChange()" type="email" id="email" name="email" placeholder="შეიყვანეთ თქვენი ელ.ფოსტა">
-                <span></span>
+                <input [formControl]="emailFormControl" [(ngModel)]="profile.email"  (ngModelChange)="onInputChange()" type="email" id="email" name="email" placeholder="შეიყვანეთ თქვენი ელ.ფოსტა" [ngClass]="{'error': emailFormControl.invalid && (emailFormControl.dirty || emailFormControl.touched), 'valid': emailFormControl.valid && (emailFormControl.dirty || emailFormControl.touched)}">
+                <span [ngClass]="{'error': emailFormControl.invalid && (emailFormControl.dirty || emailFormControl.touched), 'valid': emailFormControl.valid && (emailFormControl.dirty || emailFormControl.touched)}"></span>
             </div>
-            <h6>უნდა მთავრდებოდეს @redberry.ge-ით</h6>
         </aside>
         <aside>
-            <label class="number-label" for="phone">მობილურის ნომერი</label>
+            <label [ngClass]="{'error': phoneFormControl.invalid && (phoneFormControl.dirty || phoneFormControl.touched), 'valid': phoneFormControl.valid && (phoneFormControl.dirty || phoneFormControl.touched)}"class="number-label" for="phone">მობილურის ნომერი</label>
             <div>
-                <input [(ngModel)]="profile.phone"  (ngModelChange)="onInputChange()" type="tel" id="phone" name="phone" placeholder="შეიყვანეთ თქვენი მობილურის ნომერი">
-                <span></span>
+                <input [formControl]="phoneFormControl" [(ngModel)]="profile.phone"  (ngModelChange)="onInputChange()" type="tel" id="phone" name="phone" placeholder="შეიყვანეთ თქვენი მობილურის ნომერი" [ngClass]="{'error': phoneFormControl.invalid && (phoneFormControl.dirty || phoneFormControl.touched), 'valid': phoneFormControl.valid && (phoneFormControl.dirty || phoneFormControl.touched)}">
+                <span [ngClass]="{'error': phoneFormControl.invalid && (phoneFormControl.dirty || phoneFormControl.touched), 'valid': phoneFormControl.valid && (phoneFormControl.dirty || phoneFormControl.touched)}"></span>
             </div>
             <h6>უნდა აკმაყოფილებდეს ქართული მობილური ნომრის ფორმატს</h6>
         </aside>
     </aside>
-</form>
+</section>
 <div class="button-div">
-    <button (click)="nextPage()" class="next-button-1st">შემდეგი</button>
+    <button [disabled]="!isValid()" (click)="nextPage()" class="next-button-1st">შემდეგი</button>
 </div>

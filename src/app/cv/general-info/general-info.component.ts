@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { defaultProfile, Profile } from 'src/app/models/profile.model';
 import { CvService } from 'src/app/services/cv.service';
@@ -10,6 +11,36 @@ import { CvService } from 'src/app/services/cv.service';
 })
 export class GeneralInfoComponent implements OnInit {
   profile: Profile = defaultProfile();
+  firstNameFormControl = new FormControl("", [
+    Validators.required,
+    Validators.minLength(2),
+    Validators.pattern("[ა-ჰ]*")
+  ]);
+
+  lastNameFormControl = new FormControl("", [
+    Validators.required,
+    Validators.minLength(2),
+    Validators.pattern("[ა-ჰ]*")
+  ]);
+
+  photoFormControl = new FormControl("", [
+    Validators.required
+  ]
+  );
+
+  descriptionFormControl = new FormControl("", [
+    Validators.pattern("[ა-ჰ]*")
+  ]);
+
+  emailFormControl = new FormControl("", [
+    Validators.required,
+    Validators.email
+  ]);
+
+  phoneFormControl = new FormControl("", [
+    Validators.required,
+    Validators.pattern("^\\+9955\\d{8}$")
+  ]);
 
   constructor(private cvService: CvService, private router: Router) {
     cvService.profile.subscribe((profile) => {
@@ -19,6 +50,18 @@ export class GeneralInfoComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  isValid() {
+    return (
+      this.firstNameFormControl.valid && 
+      this.lastNameFormControl.valid && 
+      this.photoFormControl.valid &&
+      this.descriptionFormControl.valid &&
+      this.emailFormControl.valid && 
+      this.phoneFormControl.valid
+    )
+    
   }
 
   onInputChange() {

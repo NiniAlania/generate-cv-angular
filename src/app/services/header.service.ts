@@ -15,11 +15,11 @@ const PAGE_CONFIG: PageConfig = {
   },
   '/education': {
     title: 'განათლება',
-    progress: '2/3'
+    progress: '3/3'
   },
   '/work-experience': {
     title: 'გამოცდილება',
-    progress: '3/3'
+    progress: '2/3'
   }
 };
 
