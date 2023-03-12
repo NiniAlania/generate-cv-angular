@@ -18,7 +18,7 @@ const PAGE_CONFIG: PageConfig = {
     progress: '2/3'
   },
   '/work-experience': {
-    title: 'გმოცდილება',
+    title: 'გამოცდილება',
     progress: '3/3'
   }
 };

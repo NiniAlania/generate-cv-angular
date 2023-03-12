@@ -1,0 +1,133 @@
+.school .top-education{
+    margin-top: 60px;
+    margin-left: 65px;
+}
+
+.school .top-education label{
+    font-family: var(--primary-font);
+    color: var(--primary-color);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+}
+
+
+.school .top-education div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 5px;
+}
+
+.school .top-education div input {
+    width: 88%;
+    height: 48px;
+    border-radius: 4px;
+    gap: 10px;
+    border: 1px solid #BCBCBC;
+    padding-left: 16px;
+    outline: none;
+}
+
+.school .top-education div input::placeholder {
+    font-family: var(--primary-font);
+    font-weight: 400;
+    size: 16px;
+    line-height: 21;
+}
+
+.school .top-education h6 {
+    margin-top: 5px;
+    font-family: var(--primary-font);
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 21px;
+    color:  #2E2E2E;
+}
+
+.school .middle-education
+ {
+    display: flex;
+    gap: 56px;
+    margin-top: 20px;
+    margin-left: 65px;
+    margin-top: 30px;
+}
+
+.school .middle-education aside {
+    display: grid;
+}
+
+.school .middle-education aside label {
+    font-family: var(--primary-font);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+    color: var(--primary-color);
+    height: 21px;
+}
+
+.school .middle-education aside input {
+    width: 318px;
+    height: 48px;
+    border-radius: 4px;
+    border: 1px solid #BCBCBC;
+    margin-top: 8px;
+    padding: 16px;
+    outline: none;
+
+}
+
+.school .bottom-education {
+    display: grid;
+    margin-top: 33px;
+    margin-left: 65px;
+}
+
+.school .bottom-education label {
+    margin-bottom: 8px;
+    font-family: var(--primary-font);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+
+}
+
+.school .bottom-education textarea {
+    resize: none;
+    outline: none;
+    width: 87%;
+    height: 123px;
+    padding-left: 16px;
+    padding-top: 13px;
+    margin-bottom: 50px;
+    margin-top: 10px;
+    border-radius: 4px;
+    border: 1px solid #BCBCBC;
+}
+
+.school .middle-education .form .status-education {
+    display: grid;
+}
+
+.school .middle-education .form {
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+}
+
+.school .middle-education .form .input-status {
+    width: 371px;
+    height: 48px;
+    background: #FFFFFF;
+    border: 1px solid #BCBCBC;
+    border-radius: 4px;
+    margin-top: 2px;
+    padding: 14px;
+    outline: none;
+
+}
+
+.school .middle-education .form option {
+    margin-top: 30px;
+}
+
