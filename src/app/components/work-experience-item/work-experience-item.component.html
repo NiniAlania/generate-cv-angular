@@ -1,39 +1,40 @@
 <section class="work">
     <aside class="work-top">
         <aside class="position"> 
-            <label for="position-input" class="position-label">თანამდებობა</label>
+            <label [ngClass]="{'error': positionFormControl.invalid && (positionFormControl.dirty || positionFormControl.touched), 'valid': positionFormControl.valid && (positionFormControl.dirty || positionFormControl.touched)}" for="position-input" class="position-label">თანამდებობა</label>
             <div>
-                <input [(ngModel)]="workExperience.position" (ngModelChange)="onInputChange()" type="text" id="position-input" class="position-input" placeholder="თანამდებობა" >
-                <span></span>
+                <input [formControl]="positionFormControl" [ngClass]="{'error': positionFormControl.invalid && (positionFormControl.dirty || positionFormControl.touched), 'valid': positionFormControl.valid && (positionFormControl.dirty || positionFormControl.touched)}" [(ngModel)]="workExperience.position" (ngModelChange)="onInputChange()" type="text" id="position-input" class="position-input" placeholder="თანამდებობა" >
+                <span [ngClass]="{'error': positionFormControl.invalid && (positionFormControl.dirty || positionFormControl.touched), 'valid': positionFormControl.valid && (positionFormControl.dirty || positionFormControl.touched)}"></span>
             </div>
             <h6>მინიმუმ 2 სიმბოლო</h6>
         </aside>
         <aside class="employer">
-            <label for="employer-input" class="employer-label">დამსაქმებელი</label>
+            <label [ngClass]="{'error': employerFormControl.invalid && (employerFormControl.dirty || employerFormControl.touched), 'valid': employerFormControl.valid && (employerFormControl.dirty || employerFormControl.touched)}" for="employer-input" class="employer-label">დამსაქმებელი</label>
             <div>
-                <input [(ngModel)]="workExperience.employer" (ngModelChange)="onInputChange()" type="text" id="employer-input" class="employer-input"  placeholder="დამსაქმებელი">
-                <span></span>
+                <input [formControl]="employerFormControl" [ngClass]="{'error': employerFormControl.invalid && (employerFormControl.dirty || employerFormControl.touched), 'valid': employerFormControl.valid && (employerFormControl.dirty || employerFormControl.touched)}" [(ngModel)]="workExperience.employer" (ngModelChange)="onInputChange()" type="text" id="employer-input" class="employer-input"  placeholder="დამსაქმებელი">
+                <span [ngClass]="{'error': employerFormControl.invalid && (employerFormControl.dirty || employerFormControl.touched), 'valid': employerFormControl.valid && (employerFormControl.dirty || employerFormControl.touched)}"></span>
             </div>
             <h6>მინიმუმ 2 სიმბოლო</h6>
         </aside>
     </aside>
     <aside class="work-middle">
         <aside class="start-date">
-            <label for="input-start-date" id="label-start-date">დაწყების რიცხვი</label>
+            <label [ngClass]="{'error': startDateFormControl.invalid && (startDateFormControl.dirty || startDateFormControl.touched), 'valid': startDateFormControl.valid && (startDateFormControl.dirty || startDateFormControl.touched)}" for="input-start-date" id="label-start-date">დაწყების რიცხვი</label>
             <div>
-                <input [(ngModel)]="workExperience.startDate" (ngModelChange)="onInputChange()" type="date" id="input-start-date" class="input-start-date">
+                <input [formControl]="startDateFormControl" [ngClass]="{'error': startDateFormControl.invalid && (startDateFormControl.dirty || startDateFormControl.touched), 'valid': startDateFormControl.valid && (startDateFormControl.dirty || startDateFormControl.touched)}" [(ngModel)]="workExperience.startDate" (ngModelChange)="onInputChange()" [(ngModel)]="workExperience.startDate" (ngModelChange)="onInputChange()" type="date" id="input-start-date" class="input-start-date">
             </div>
         </aside>
         <aside class="end-date">
-            <label for="input-end-date" id="label-end-date">დამთავრების რიცხვი</label>
+            <label [ngClass]="{'error': endDateFormControl.invalid && (endDateFormControl.dirty || endDateFormControl.touched), 'valid': endDateFormControl.valid && (endDateFormControl.dirty || endDateFormControl.touched)}" for="input-end-date" id="label-end-date">დამთავრების რიცხვი</label>
             <div>
-                <input [(ngModel)]="workExperience.endDate" (ngModelChange)="onInputChange()" type="date" id="input-end-date" class="input-end-date">
+                <input [formControl]="endDateFormControl" [ngClass]="{'error': endDateFormControl.invalid && (endDateFormControl.dirty || endDateFormControl.touched), 'valid': endDateFormControl.valid && (endDateFormControl.dirty || endDateFormControl.touched)}" [(ngModel)]="workExperience.endDate" (ngModelChange)="onInputChange()" type="date" id="input-end-date" class="input-end-date">
             </div>
         </aside>
     </aside>
     <aside class="work-bottom">
-        <label for="work-description" id="work-description-label">როლი თანამდებობაზე და ზოგადი აღწერა</label>
-        <textarea [(ngModel)]="workExperience.description" (ngModelChange)="onInputChange()" id="work-description" class="work-description" cols="30" rows="10" placeholder="გთხოვთ, შეიყვანოთ საქმიანობის აღწერა"></textarea>
+        <label [ngClass]="{'error': descriptionFormControl.invalid && (descriptionFormControl.dirty || descriptionFormControl.touched), 'valid': descriptionFormControl.valid && (descriptionFormControl.dirty || descriptionFormControl.touched)}" for="work-description" id="work-description-label">როლი თანამდებობაზე და ზოგადი აღწერა</label>
+        <textarea [formControl]="descriptionFormControl" [ngClass]="{'error': descriptionFormControl.invalid && (descriptionFormControl.dirty || descriptionFormControl.touched), 'valid': descriptionFormControl.valid && (descriptionFormControl.dirty || descriptionFormControl.touched)}" [(ngModel)]="workExperience.description" (ngModelChange)="onInputChange()" id="work-description" class="work-description" cols="30" rows="10" placeholder="გთხოვთ, შეიყვანოთ საქმიანობის აღწერა"></textarea>
+        <span [ngClass]="{'error': descriptionFormControl.invalid && (descriptionFormControl.dirty || descriptionFormControl.touched), 'valid': descriptionFormControl.valid && (descriptionFormControl.dirty || descriptionFormControl.touched)}"></span>
     </aside>
 </section>
 <hr>

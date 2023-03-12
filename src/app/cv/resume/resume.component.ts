@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Education } from 'src/app/models/education.model';
+import { Experience } from 'src/app/models/experience.model';
+import { defaultProfile, Profile } from 'src/app/models/profile.model';
+import { CvService } from 'src/app/services/cv.service';
 
 @Component({
   selector: 'app-resume',
@@ -6,8 +10,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./resume.component.css']
 })
 export class ResumeComponent implements OnInit {
+  profile: Profile = defaultProfile();
+  educations: Education[] = [];
+  workExperiences: Experience[] = [];
 
-  constructor() { }
+  constructor(private cvService: CvService) {
+    cvService.profile.subscribe((profile) => {
+      this.profile = profile;
+    });
+    cvService.education.subscribe((educations) => {
+      this.educations = educations.filter((e) => !Object.keys(e).every(key => e[key as keyof Education] === ''));
+    });
+    cvService.workExperience.subscribe((workExperience) => {
+      this.workExperiences = workExperience.filter((e) => !Object.keys(e).every(key => e[key as keyof Experience] === ''));
+    });
+  }
 
   ngOnInit(): void {
   }

@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { EducationComponent } from './cv/education/education.component';
 import { GeneralInfoComponent } from './cv/general-info/general-info.component';
 import { HomeComponent } from './cv/home/home.component';
-import { ResumeComponent } from './cv/resume/resume.component';
+import { ResultComponent } from './cv/result/result.component';
 import { WorkExperienceComponent } from './cv/work-experience/work-experience.component';
 
 const routes: Routes = [
@@ -24,8 +24,8 @@ const routes: Routes = [
     component: EducationComponent
   },
   {
-    path: 'resume',
-    component: ResumeComponent
+    path: 'result',
+    component: ResultComponent
   },
   {
     path: '**',

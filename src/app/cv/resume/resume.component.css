@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+:root {
+    --primary-color: black;
+    --resume-color: #F93B1D;
+    --my-font: 'Montserrat', sans-serif;
+}
+
+.main-section  {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+ .first-part {
+    display: flex;
+    height: 350px;
+}
+
+
+.first-page-information .fullname {
+    display: flex;
+}
+
+.first-page-information .fullname .resume-name {
+    margin-left: 80px;
+    margin-top: 68px;
+}
+.first-page-information .fullname .resume-surname {
+    margin-left: 20px;
+    margin-top: 68px;
+}
+
+.first-page-information .fullname h3 {
+    font-size: 34px;
+    font-family: var(--my-font);
+    font-style: normal;
+    color: var(--resume-color);
+    font-weight: 700;
+    line-height: 42px;
+}
+
+.first-page-information .contact div {
+    width: 208px;
+    height: 21px;
+    display: flex;
+
+}
+
+
+.first-page-information .contact .email-icon {
+    background-image: url('/assets/email-icon.png');
+    width: 17.5px;
+    height: 17.5px;
+    position: absolute;
+    margin-left: 82px;
+    margin-top: 10px;
+}
+
+.first-page-information .contact .mobile-icon {
+    background-image: url('/assets/phone-icon.png');
+    width: 17px;
+    height: 17px;
+    margin-left: 82.67px;
+    position: absolute;
+    margin-top: 20px;
+
+}
+
+.first-page-information .contact h5 {
+   margin-left: 110px;
+   font-family: var(--my-font);
+   font-size: 18px;
+   font-weight: 400;
+   line-height: 21.47px;
+   color: var(--primary-color);
+}
+
+.first-page-information .contact .mobile-number {
+    margin-top: 18px;
+}
+
+.first-page-information .contact .my-email {
+    margin-top: 7px;
+}
+
+.first-page-information .aboutMe {
+    margin-top: 30px;
+    width: 432px;
+    height: 100px;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+.first-page-information .aboutMe h5 {
+    margin-left: 80px;
+    font-family: var(--my-font);
+    font-size: 18px;
+    color: var(--resume-color);
+    font-weight: 700;
+    line-height: 21.98px;
+}
+
+.first-page-information .aboutMe p {
+    margin-left: 80px;
+    width: 432px;
+    font-family: var(--my-font);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    color: var(--primary-color);
+    text-transform: lowercase;
+    font-style: normal;
+    word-wrap: break-word;
+    text-align: justify;
+    margin-top: 0px;
+}
+
+.display .first-part-hr {
+    margin: 13px 82px;
+    width: 662px;
+    flex-grow: 1;
+}
+
+.resume-photo img {
+    border-radius: 50%;
+    width: 246px;
+    height: 246px;
+    margin-top: 48px;
+    margin-left: 100px;
+}
+
+
+ .second-part,
+.third-part {
+    margin-left: 80px;
+    margin-top: 24px;
+}
+
+.second-part .resume-experience h5,
+.third-part .resume-education h5 {
+    font-family: var(--primary-font);
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21.98px;
+    color: #F93B1D;
+    font-style: normal;
+}
+
+.second-part .resume-experience .resume-employer {
+    display: flex;
+}
+
+.second-part .resume-experience .resume-employer span {
+    margin-top: 12px;
+}
+
+.second-part .resume-experience h6,
+.third-part .resume-education .resume-school h6 {
+    margin-top: 15px;
+    font-family: var(--primary-font);
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;    
+    line-height: 20px;
+    color: #1A1A1A;
+    margin-bottom: 0px;
+}
+
+ .second-part .resume-experience .second {
+    margin-left: 7px;
+}
+
+.second-part .experience-date, 
+.third-part .resume-education .school-date{
+    display: flex;
+}
+
+
+.second-part .experience-date h6,
+.third-part .resume-education .school-date h6{
+    margin-top: 5px;
+    margin-left: 0px;
+    font-family: var(--primary-font);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #919191;
+    margin-bottom: 16px;
+}
+
+.second-part p, 
+.third-part .resume-education p {
+    width: 662px;
+    height: 66px;
+    left: 80px;
+    top: 464px;
+    font-family: var(--primary-font);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    text-transform: capitalize;
+    color: var(--primary-color);
+}
+
+.second-part .second-part-hr {
+    width: 662px;
+}

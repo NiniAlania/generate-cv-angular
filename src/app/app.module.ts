@@ -17,7 +17,7 @@ import { BackgroundRightComponent } from './shared/background-right/background-r
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { WorkExperienceItemComponent } from './components/work-experience-item/work-experience-item.component';
 import { EducationItemComponent } from './components/education-item/education-item.component';
-
+import { ResultComponent } from './cv/result/result.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +30,8 @@ import { EducationItemComponent } from './components/education-item/education-it
     BackgroundLeftComponent,
     BackgroundRightComponent,
     WorkExperienceItemComponent,
-    EducationItemComponent
+    EducationItemComponent,
+    ResultComponent,
   ],
   imports: [
     BrowserModule,

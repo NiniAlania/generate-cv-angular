@@ -27,12 +27,18 @@ export class CvService {
   }
 
   setEducation(education: Education[]) {
-    this.sessionStorage.store('education', education.filter((e) => !Object.keys(e).every(key => e[key as keyof Education] === '')));
+    const filteredEducation = education.filter((e) => !Object.keys(e).every(key => e[key as keyof Education] === ''));
+    if (filteredEducation.length > 0) {
+      this.sessionStorage.store('education', filteredEducation);
+    }
     this.educationSource.next(education);
   }
 
   setWorkExperience(workExperience: Experience[]) {
-    this.sessionStorage.store('workExperience', workExperience.filter((e) => !Object.keys(e).every(key => e[key as keyof Experience] === '')));
+    const filteredExperience = workExperience.filter((e) => !Object.keys(e).every(key => e[key as keyof Experience] === ''));
+    if (filteredExperience.length > 0) {
+      this.sessionStorage.store('workExperience', filteredExperience);
+    }
     this.workExperienceSource.next(workExperience);
   }
 

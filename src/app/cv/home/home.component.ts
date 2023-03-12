@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { SessionStorageService } from 'ngx-webstorage';
-import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -9,13 +7,15 @@ import { Observable } from 'rxjs';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  items: Observable<any[]>;
 
-  constructor(private firestore: AngularFirestore, private sessionStorage: SessionStorageService) {
-    this.items = firestore.collection('items').valueChanges()
+  constructor(private router: Router) {
   }
 
   ngOnInit(): void {
+  }
+
+  start() {
+    this.router.navigate(["/general-info"]);
   }
 
 }

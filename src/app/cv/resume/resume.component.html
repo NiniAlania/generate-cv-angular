@@ -1,1 +1,69 @@
-<p>resume works!</p>
+<section class="main-section">
+    <div class="display" id="pdf">
+        <section class="first-part">
+            <aside class="first-page-information">
+                <aside class="fullname">
+                    <h3 [innerText]="profile.firstName" class="resume-name"></h3>
+                    <h3 [innerText]="profile.lastName" class="resume-surname"></h3>
+                </aside>
+                <aside class="contact">
+                    <div>
+                        <span *ngIf="profile.email !== ''" class="email-icon"></span>
+                        <h5 [innerText]="profile.email" class="my-email"></h5>
+                    </div>
+                    <div>
+                        <span *ngIf="profile.phone !== ''" class="mobile-icon"></span>
+                        <h5 [innerText]="profile.phone" class="mobile-number"></h5>
+                    </div>
+                </aside>
+                <aside class="aboutMe">
+                    <h5 *ngIf="profile.description !== ''" class="about-me-title">ჩემ შესახებ</h5>
+                    <p [innerText]="profile.description" class="about-me-p"></p>
+                </aside>
+            </aside>
+            <aside class="resume-photo">
+                <img class="resume-image" [src]="profile.image" alt="">
+            </aside>
+        </section>
+        <hr class="first-part-hr">
+        <section class="second-part">
+            <aside class="resume-experience">
+                <h5 *ngIf="workExperiences.length>0">გამოცდილება</h5>
+                <ng-container *ngFor="let workExperience of workExperiences">
+                    <section class="resume-experience-block">
+                        <div class="resume-employer">
+                            <h6 [innerText]="workExperience.position"  class="resume-employer-position"></h6>
+                            <span *ngIf="workExperience.position !=='' && workExperience.employer !== '' " class="comma">,</span>
+                            <h6 [innerText]="workExperience.employer" class="second resume-employer-employer"></h6>
+                        </div>
+                        <div class="experience-date">
+                            <h6 [innerText]="workExperience.startDate" class="resume-start-date"></h6>
+                            <span *ngIf="workExperience.startDate !=='' && workExperience.endDate !=='' " class="def"> -</span>
+                            <h6 [innerText]="workExperience.endDate" class="resume-end-date"></h6>
+                        </div>
+                        <p [innerText]="workExperience.description" class="resume-description"></p>
+                    </section>
+                </ng-container>
+                <hr class="second-part-hr">
+            </aside>
+        </section>
+        <section class="third-part">
+            <aside class="resume-education">
+                <h5 *ngIf="educations.length>0">განათლება</h5>
+                <ng-container *ngFor="let education of educations">
+                    <section class="resume-education-block">
+                        <div class="resume-school">
+                            <h6 [innerText]="education.institution" class="resume-school-name"></h6>        
+                        </div>
+                        <div class="school-date">
+                            <h6 [innerText]="education.startDate"></h6>
+                            <span *ngIf="education.startDate !=='' && education.endDate !==''" class="secondComma">,</span>
+                            <h6 [innerText]="education.endDate" class="resume-end-date-edu"></h6>
+                        </div>
+                        <p [innerText]="education.description" class="school-description"></p>
+                    </section>
+                </ng-container>
+            </aside>
+        </section>
+    </div>
+</section>
