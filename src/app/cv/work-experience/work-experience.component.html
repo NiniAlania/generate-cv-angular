@@ -2,6 +2,7 @@
     <app-work-experience-item
         [workExperience]="workExperience"
         (workExperienceChanged)="onWorkExperienceChanged($event, i)"
+        (workExperienceValid)="onWorkExperienceValidChanged($event, i)">
     ></app-work-experience-item>
 </ng-container>
 <aside class="top-button">
@@ -9,5 +10,5 @@
 </aside>
 <aside class="bottom-button">
     <button (click)="prevPage()" class="back-button-2nd">უკან</button>
-    <button (click)="nextPage()" class="next-button-2nd">შემდეგი</button>
+    <button [disabled]="!isValid" (click)="nextPage()" class="next-button-2nd">შემდეგი</button>
 </aside>

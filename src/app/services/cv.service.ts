@@ -13,11 +13,15 @@ import { defaultProfile, Profile } from '../models/profile.model';
 export class CvService {
   private profileSource = new BehaviorSubject<Profile>(defaultProfile());
   private educationSource = new BehaviorSubject<Education[]>([defaultEducation()]);
+  private educationValidSource = new BehaviorSubject<boolean[]>([false]);
   private workExperienceSource = new BehaviorSubject<Experience[]>([defaultExperience()]);
+  private workExperienceValidSource = new BehaviorSubject<boolean[]>([false]);
 
   profile = this.profileSource.asObservable();
   education = this.educationSource.asObservable();
+  educationValid = this.educationValidSource.asObservable();
   workExperience = this.workExperienceSource.asObservable();
+  workExperienceValid = this.workExperienceValidSource.asObservable();
 
   constructor(private sessionStorage: SessionStorageService, private firestore: AngularFirestore) { }
 
@@ -34,12 +38,20 @@ export class CvService {
     this.educationSource.next(education);
   }
 
+  setEducationValid(valid: boolean[]) {
+    this.educationValidSource.next(valid);
+  }
+
   setWorkExperience(workExperience: Experience[]) {
     const filteredExperience = workExperience.filter((e) => !Object.keys(e).every(key => e[key as keyof Experience] === ''));
     if (filteredExperience.length > 0) {
       this.sessionStorage.store('workExperience', filteredExperience);
     }
     this.workExperienceSource.next(workExperience);
+  }
+
+  setWorkExperienceValid(valid: boolean[]) {
+    this.workExperienceValidSource.next(valid);
   }
 
   restoreCV() {
@@ -53,10 +65,12 @@ export class CvService {
 
     if (education) {
       this.educationSource.next(education);
+      this.educationValidSource.next(education.map(() => true));
     }
 
     if (workExperience) {
       this.workExperienceSource.next(workExperience);
+      this.workExperienceValidSource.next(workExperience.map(() => true));
     }
   }
 

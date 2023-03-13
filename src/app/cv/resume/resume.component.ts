@@ -24,6 +24,8 @@ export class ResumeComponent implements OnInit {
     cvService.workExperience.subscribe((workExperience) => {
       this.workExperiences = workExperience.filter((e) => !Object.keys(e).every(key => e[key as keyof Experience] === ''));
     });
+
+    this.cvService.restoreCV();
   }
 
   ngOnInit(): void {

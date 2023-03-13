@@ -11,6 +11,7 @@ import { CvService } from 'src/app/services/cv.service';
 })
 export class GeneralInfoComponent implements OnInit {
   profile: Profile = defaultProfile();
+  
   firstNameFormControl = new FormControl("", [
     Validators.required,
     Validators.minLength(2),
@@ -29,7 +30,7 @@ export class GeneralInfoComponent implements OnInit {
   );
 
   descriptionFormControl = new FormControl("", [
-    Validators.pattern("[ა-ჰ\\s]*")
+    Validators.pattern("[ა-ჰ]*")
   ]);
 
   emailFormControl = new FormControl("", [

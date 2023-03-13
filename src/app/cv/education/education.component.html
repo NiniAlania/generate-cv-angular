@@ -1,7 +1,8 @@
 <ng-container *ngFor="let education of educations; index as i">
-    <app-education-item [education]="education" 
-    (educationChanged)="onEducationChanged($event, i)"
-    (educationValid)="onEducationValidChanged($event, i)">
+    <app-education-item 
+        [education]="education" 
+        (educationChanged)="onEducationChanged($event, i)"
+        (educationValid)="onEducationValidChanged($event, i)">
     </app-education-item>
 </ng-container>
 <aside class="top-button-edu">
@@ -9,5 +10,5 @@
 </aside>
 <aside class="bottom-button-edu">
     <button (click)="prevPage()" class="back-button-3rd">უკან</button>
-    <button [disabled]="!isValid()" (click)="nextPage()" class="finish-button-3rd">დასრულება</button>
+    <button [disabled]="!isValid" (click)="nextPage()" class="finish-button-3rd">დასრულება</button>
 </aside>

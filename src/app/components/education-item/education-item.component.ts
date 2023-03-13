@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { EventManager } from '@angular/platform-browser';
 import { defaultEducation, Education } from 'src/app/models/education.model';
 
 @Component({
@@ -16,7 +15,7 @@ export class EducationItemComponent implements OnInit {
   
   institutionFormControl = new FormControl("", [
     Validators.required,
-    Validators.pattern("[ა-ჰ]*")
+    Validators.pattern("[ა-ჰ\\s]*")
   ]);
 
   startDateFormControl = new FormControl("", [
@@ -29,19 +28,13 @@ export class EducationItemComponent implements OnInit {
 
   descriptionFormControl = new FormControl("", [
     Validators.required,
-    Validators.pattern("[ა-ჰ]*")
+    Validators.pattern("[ა-ჰ\\s]*")
   ]);
 
-  constructor() {
-    
-  }
+  constructor() { }
 
   ngOnInit(): void {
-    
-  }
-
-  ngOnChanges() {
-    this.educationValid.emit(this.isValid());
+    this.educationValid.emit(this.isValid())
   }
 
   isValid() {
@@ -62,10 +55,5 @@ export class EducationItemComponent implements OnInit {
     this.educationChanged.emit(this.education);
     this.educationValid.emit(this.isValid());
   }
-
-  schoolAdded() {
-    
-  }
-  
 
 }

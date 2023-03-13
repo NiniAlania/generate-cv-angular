@@ -14,12 +14,12 @@ export class WorkExperienceItemComponent implements OnInit {
 
   positionFormControl = new FormControl("", [
     Validators.required,
-    Validators.pattern("[ა-ჰ]*")
+    Validators.pattern("[ა-ჰ\\s]*")
   ]);
 
   employerFormControl = new FormControl("", [
     Validators.required,
-    Validators.pattern("[ა-ჰ]*")
+    Validators.pattern("[ა-ჰ\\s]*")
   ]);
 
   startDateFormControl = new FormControl("", [
@@ -32,17 +32,13 @@ export class WorkExperienceItemComponent implements OnInit {
 
   descriptionFormControl = new FormControl("", [
     Validators.required,
-    Validators.pattern("[ა-ჰ]*")
+    Validators.pattern("[ა-ჰ\\s]*")
   ]);
 
   constructor() { }
 
   ngOnInit(): void {
-    
-  }
-
-  ngOnChanges() {
-    this.workExperienceValid.emit(this.isValid());
+    this.workExperienceValid.emit(this.isValid())
   }
 
   isValid() {

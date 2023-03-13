@@ -10,10 +10,16 @@ import { CvService } from 'src/app/services/cv.service';
 })
 export class WorkExperienceComponent implements OnInit {
   workExperiences: Experience[] = [defaultExperience()]
+  workExperiencesValid: boolean[] = [true];
+  isValid = true;
 
   constructor(private cvService: CvService, private router: Router) {
     cvService.workExperience.subscribe((workExperiences) => {
       this.workExperiences = workExperiences;
+    });
+
+    cvService.workExperienceValid.subscribe((workExperiencesValid) => {
+      this.workExperiencesValid = workExperiencesValid;
     });
 
     this.cvService.restoreCV();
@@ -27,8 +33,14 @@ export class WorkExperienceComponent implements OnInit {
     this.cvService.setWorkExperience(this.workExperiences);
   }
 
+  onWorkExperienceValidChanged(isValid: boolean, index: number) {
+    this.workExperiencesValid[index] = isValid;
+    this.isValid = this.workExperiencesValid.every((isValid) => isValid);
+  }
+
   onAddExperience() {
     this.cvService.setWorkExperience([...this.workExperiences, defaultExperience()]);
+    this.cvService.setWorkExperienceValid([...this.workExperiencesValid, true]);
   }
 
   prevPage() {
