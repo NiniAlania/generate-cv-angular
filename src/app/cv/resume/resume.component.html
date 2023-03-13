@@ -25,7 +25,7 @@
                 <img class="resume-image" [src]="profile.image" alt="">
             </aside>
         </section>
-        <hr class="first-part-hr">
+        <hr class="first-part-hr"  *ngIf="workExperiences.length>0">
         <section class="second-part">
             <aside class="resume-experience">
                 <h5 *ngIf="workExperiences.length>0">გამოცდილება</h5>
@@ -44,9 +44,9 @@
                         <p [innerText]="workExperience.description" class="resume-description"></p>
                     </section>
                 </ng-container>
-                <hr class="second-part-hr">
             </aside>
         </section>
+        <hr class="second-part-hr" *ngIf="educations.length>0">
         <section class="third-part">
             <aside class="resume-education">
                 <h5 *ngIf="educations.length>0">განათლება</h5>

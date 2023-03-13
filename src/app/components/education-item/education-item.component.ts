@@ -62,6 +62,10 @@ export class EducationItemComponent implements OnInit {
     this.educationChanged.emit(this.education);
     this.educationValid.emit(this.isValid());
   }
+
+  schoolAdded() {
+    
+  }
   
 
 }

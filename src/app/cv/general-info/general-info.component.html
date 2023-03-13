@@ -28,22 +28,21 @@
             </div>
         </aside>
         <aside>
-            <label [ngClass]="{'error': descriptionFormControl.invalid && (descriptionFormControl.dirty || descriptionFormControl.touched), 'valid': descriptionFormControl.valid && (descriptionFormControl.dirty || descriptionFormControl.touched)}" for="description">ჩემ შესახებ(არასავალდებულო)</label>
-            <textarea [formControl]="descriptionFormControl" [(ngModel)]="profile.description"  (ngModelChange)="onInputChange()"  id="description" cols="30" rows="10" name="description" placeholder="ზოგადი ინფო შენ შესახებ" maxlength="300" [ngClass]="{'error': descriptionFormControl.invalid && (descriptionFormControl.dirty || descriptionFormControl.touched), 'valid': descriptionFormControl.valid && (descriptionFormControl.dirty || descriptionFormControl.touched)}"></textarea>
+            <label [ngClass]="{'valid': descriptionFormControl.valid && (descriptionFormControl.dirty || descriptionFormControl.touched)}" for="description">ჩემ შესახებ(არასავალდებულო)</label>
+            <textarea [formControl]="descriptionFormControl" [(ngModel)]="profile.description"  (ngModelChange)="onInputChange()"  id="description" cols="30" rows="9" name="description" placeholder="ზოგადი ინფო შენ შესახებ" maxlength="300" [ngClass]="{'valid': descriptionFormControl.valid && (descriptionFormControl.dirty || descriptionFormControl.touched)}" maxlength="250 "></textarea>
         </aside>
-    
         <aside>
             <label [ngClass]="{'error': emailFormControl.invalid && (emailFormControl.dirty || emailFormControl.touched), 'valid': emailFormControl.valid && (emailFormControl.dirty || emailFormControl.touched)}" class="email-label" for="email">ელ.ფოსტა</label>
             <div>
                 <input [formControl]="emailFormControl" [(ngModel)]="profile.email"  (ngModelChange)="onInputChange()" type="email" id="email" name="email" placeholder="შეიყვანეთ თქვენი ელ.ფოსტა" [ngClass]="{'error': emailFormControl.invalid && (emailFormControl.dirty || emailFormControl.touched), 'valid': emailFormControl.valid && (emailFormControl.dirty || emailFormControl.touched)}">
-                <span [ngClass]="{'error': emailFormControl.invalid && (emailFormControl.dirty || emailFormControl.touched), 'valid': emailFormControl.valid && (emailFormControl.dirty || emailFormControl.touched)}"></span>
+                <span [ngClass]="{'error-long': emailFormControl.invalid && (emailFormControl.dirty || emailFormControl.touched), 'valid-long': emailFormControl.valid && (emailFormControl.dirty || emailFormControl.touched)}"></span>
             </div>
         </aside>
         <aside>
             <label [ngClass]="{'error': phoneFormControl.invalid && (phoneFormControl.dirty || phoneFormControl.touched), 'valid': phoneFormControl.valid && (phoneFormControl.dirty || phoneFormControl.touched)}"class="number-label" for="phone">მობილურის ნომერი</label>
             <div>
                 <input [formControl]="phoneFormControl" [(ngModel)]="profile.phone"  (ngModelChange)="onInputChange()" type="tel" id="phone" name="phone" placeholder="შეიყვანეთ თქვენი მობილურის ნომერი" [ngClass]="{'error': phoneFormControl.invalid && (phoneFormControl.dirty || phoneFormControl.touched), 'valid': phoneFormControl.valid && (phoneFormControl.dirty || phoneFormControl.touched)}">
-                <span [ngClass]="{'error': phoneFormControl.invalid && (phoneFormControl.dirty || phoneFormControl.touched), 'valid': phoneFormControl.valid && (phoneFormControl.dirty || phoneFormControl.touched)}"></span>
+                <span [ngClass]="{'error-long': phoneFormControl.invalid && (phoneFormControl.dirty || phoneFormControl.touched), 'valid-long': phoneFormControl.valid && (phoneFormControl.dirty || phoneFormControl.touched)}"></span>
             </div>
             <h6>უნდა აკმაყოფილებდეს ქართული მობილური ნომრის ფორმატს</h6>
         </aside>

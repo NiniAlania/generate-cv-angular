@@ -29,7 +29,7 @@ export class GeneralInfoComponent implements OnInit {
   );
 
   descriptionFormControl = new FormControl("", [
-    Validators.pattern("[ა-ჰ]*")
+    Validators.pattern("[ა-ჰ\\s]*")
   ]);
 
   emailFormControl = new FormControl("", [

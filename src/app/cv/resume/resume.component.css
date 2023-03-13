@@ -116,7 +116,8 @@
     margin-top: 0px;
 }
 
-.display .first-part-hr {
+.display .first-part-hr,
+.second-part-hr {
     margin: 13px 82px;
     width: 662px;
     flex-grow: 1;
@@ -205,6 +206,3 @@
     color: var(--primary-color);
 }
 
-.second-part .second-part-hr {
-    width: 662px;
-}

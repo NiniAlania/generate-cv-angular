@@ -23,8 +23,17 @@ span.error {
     width: 23px;
     height: 20px;
     background-repeat: no-repeat;
-    margin-left: 305px;
     margin-top: 20px;
+}
+
+
+span.error-long {
+    background-image: url("/assets/red-icon.png");
+    width: 23px;
+    height: 20px;
+    background-repeat: no-repeat;
+    margin-left: 720px;
+    margin-top: 12px;
 }
 
 span.valid {
@@ -34,6 +43,15 @@ span.valid {
     background-repeat: no-repeat;
     margin-left: 305px;
     margin-top: 20px;
+}
+
+span.valid-long {
+    background-image: url("/assets/green-icon.png");
+    width: 23px;
+    height: 20px;
+    background-repeat: no-repeat;
+    margin-left: 720px;
+    margin-top: 12px;
 }
 
 h4.error {

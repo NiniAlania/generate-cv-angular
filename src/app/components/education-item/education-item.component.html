@@ -29,4 +29,4 @@
         <span [ngClass]="{'error': descriptionFormControl.invalid && (descriptionFormControl.dirty || descriptionFormControl.touched), 'valid': descriptionFormControl.valid && (descriptionFormControl.dirty || descriptionFormControl.touched)}"></span>
     </aside>
 </section>
-<hr>
+<hr *ngIf="schoolAdded()">
