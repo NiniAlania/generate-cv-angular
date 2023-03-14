@@ -33,8 +33,10 @@
     </aside>
     <aside class="work-bottom">
         <label [ngClass]="{'error': descriptionFormControl.invalid && (descriptionFormControl.dirty || descriptionFormControl.touched), 'valid': descriptionFormControl.valid && (descriptionFormControl.dirty || descriptionFormControl.touched)}" for="work-description" id="work-description-label">როლი თანამდებობაზე და ზოგადი აღწერა</label>
-        <textarea [formControl]="descriptionFormControl" [ngClass]="{'error': descriptionFormControl.invalid && (descriptionFormControl.dirty || descriptionFormControl.touched), 'valid': descriptionFormControl.valid && (descriptionFormControl.dirty || descriptionFormControl.touched)}" [(ngModel)]="workExperience.description" (ngModelChange)="onInputChange()" id="work-description" class="work-description" cols="30" rows="10" placeholder="გთხოვთ, შეიყვანოთ საქმიანობის აღწერა"></textarea>
-        <span [ngClass]="{'error': descriptionFormControl.invalid && (descriptionFormControl.dirty || descriptionFormControl.touched), 'valid': descriptionFormControl.valid && (descriptionFormControl.dirty || descriptionFormControl.touched)}"></span>
+        <div>
+            <textarea [formControl]="descriptionFormControl" [ngClass]="{'error': descriptionFormControl.invalid && (descriptionFormControl.dirty || descriptionFormControl.touched), 'valid': descriptionFormControl.valid && (descriptionFormControl.dirty || descriptionFormControl.touched)}" [(ngModel)]="workExperience.description" (ngModelChange)="onInputChange()" id="work-description" class="work-description" cols="30" rows="10" placeholder="გთხოვთ, შეიყვანოთ საქმიანობის აღწერა"></textarea>
+            <span [ngClass]="{'error-textarea': descriptionFormControl.invalid && (descriptionFormControl.dirty || descriptionFormControl.touched), 'valid-textarea': descriptionFormControl.valid && (descriptionFormControl.dirty || descriptionFormControl.touched)}"></span>
+        </div>
     </aside>
 </section>
 <hr>

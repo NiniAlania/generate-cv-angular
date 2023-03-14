@@ -86,6 +86,7 @@ export class GeneralInfoComponent implements OnInit {
 
   nextPage() {
     this.router.navigate(["/work-experience"]);
+    console.log("დამეჭირა")
   }
 
 }

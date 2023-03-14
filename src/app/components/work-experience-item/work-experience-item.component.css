@@ -12,11 +12,11 @@
 }
 
 
-.work .work-top div{
+.work .work-top div,
+.work .work-bottom div{
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    margin-top: 5px;
 }
 
 .work .work-top div input{

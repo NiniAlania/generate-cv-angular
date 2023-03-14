@@ -2,7 +2,7 @@
     <aside class="top">
         <aside>
             <label [ngClass]="{'error': firstNameFormControl.invalid && (firstNameFormControl.dirty || firstNameFormControl.touched)}" for="name">სახელი</label>
-            <div>
+            <div class="for-icon">
                 <input [formControl]="firstNameFormControl" [(ngModel)]="profile.firstName" (ngModelChange)="onInputChange()" type="text" id="name" name="name" placeholder="შეიყვანეთ თქვენი სახელი" [ngClass]="{'error': firstNameFormControl.invalid && (firstNameFormControl.dirty || firstNameFormControl.touched), 'valid': firstNameFormControl.valid && (firstNameFormControl.dirty || firstNameFormControl.touched)}">
                 <span [ngClass]="{'error': firstNameFormControl.invalid && (firstNameFormControl.dirty || firstNameFormControl.touched), 'valid': firstNameFormControl.valid && (firstNameFormControl.dirty || firstNameFormControl.touched)}">
                 </span>
@@ -24,7 +24,6 @@
             <div> 
                 <label for="image">ატვირთვა</label>
                 <input [formControl]="photoFormControl" (change)="onImageSelected($event)" type="file" id="image" name="image" [ngClass]="{'error': photoFormControl.invalid && (photoFormControl.dirty || photoFormControl.touched), 'valid': photoFormControl.valid && (photoFormControl.dirty || photoFormControl.touched)}">
-                <span [ngClass]="{'error': photoFormControl.invalid && (photoFormControl.dirty || photoFormControl.touched), 'valid': photoFormControl.valid && (photoFormControl.dirty || photoFormControl.touched)}"></span>
             </div>
         </aside>
         <aside>
@@ -35,14 +34,14 @@
             <label [ngClass]="{'error': emailFormControl.invalid && (emailFormControl.dirty || emailFormControl.touched), 'valid': emailFormControl.valid && (emailFormControl.dirty || emailFormControl.touched)}" class="email-label" for="email">ელ.ფოსტა</label>
             <div>
                 <input [formControl]="emailFormControl" [(ngModel)]="profile.email"  (ngModelChange)="onInputChange()" type="email" id="email" name="email" placeholder="შეიყვანეთ თქვენი ელ.ფოსტა" [ngClass]="{'error': emailFormControl.invalid && (emailFormControl.dirty || emailFormControl.touched), 'valid': emailFormControl.valid && (emailFormControl.dirty || emailFormControl.touched)}">
-                <span [ngClass]="{'error-long': emailFormControl.invalid && (emailFormControl.dirty || emailFormControl.touched), 'valid-long': emailFormControl.valid && (emailFormControl.dirty || emailFormControl.touched)}"></span>
+                <span [ngClass]="{'error': emailFormControl.invalid && (emailFormControl.dirty || emailFormControl.touched), 'valid': emailFormControl.valid && (emailFormControl.dirty || emailFormControl.touched)}"></span>
             </div>
         </aside>
         <aside>
             <label [ngClass]="{'error': phoneFormControl.invalid && (phoneFormControl.dirty || phoneFormControl.touched), 'valid': phoneFormControl.valid && (phoneFormControl.dirty || phoneFormControl.touched)}"class="number-label" for="phone">მობილურის ნომერი</label>
             <div>
                 <input [formControl]="phoneFormControl" [(ngModel)]="profile.phone"  (ngModelChange)="onInputChange()" type="tel" id="phone" name="phone" placeholder="შეიყვანეთ თქვენი მობილურის ნომერი" [ngClass]="{'error': phoneFormControl.invalid && (phoneFormControl.dirty || phoneFormControl.touched), 'valid': phoneFormControl.valid && (phoneFormControl.dirty || phoneFormControl.touched)}">
-                <span [ngClass]="{'error-long': phoneFormControl.invalid && (phoneFormControl.dirty || phoneFormControl.touched), 'valid-long': phoneFormControl.valid && (phoneFormControl.dirty || phoneFormControl.touched)}"></span>
+                <span [ngClass]="{'error': phoneFormControl.invalid && (phoneFormControl.dirty || phoneFormControl.touched), 'valid': phoneFormControl.valid && (phoneFormControl.dirty || phoneFormControl.touched)}"></span>
             </div>
             <h6>უნდა აკმაყოფილებდეს ქართული მობილური ნომრის ფორმატს</h6>
         </aside>

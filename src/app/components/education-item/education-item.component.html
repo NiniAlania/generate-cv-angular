@@ -25,8 +25,10 @@
     </aside>
     <aside class="bottom-education">
         <label [ngClass]="{'error': descriptionFormControl.invalid && (descriptionFormControl.dirty || descriptionFormControl.touched), 'valid': descriptionFormControl.valid && (descriptionFormControl.dirty || descriptionFormControl.touched)}" for="education-description" id="education-description-label">განათლების აღწერა</label>
-        <textarea [formControl]="descriptionFormControl" [ngClass]="{'error': descriptionFormControl.invalid && (descriptionFormControl.dirty || descriptionFormControl.touched), 'valid': descriptionFormControl.valid && (descriptionFormControl.dirty || descriptionFormControl.touched)}"  [(ngModel)]="education.description" (ngModelChange)="onInputChange()" id="education-description" class="education-description" cols="30" rows="10" placeholder="გთხოვთ, შეიყვანოთ საქმიანობის აღწერა"></textarea>
-        <span [ngClass]="{'error': descriptionFormControl.invalid && (descriptionFormControl.dirty || descriptionFormControl.touched), 'valid': descriptionFormControl.valid && (descriptionFormControl.dirty || descriptionFormControl.touched)}"></span>
+        <div>
+            <textarea [formControl]="descriptionFormControl" [ngClass]="{'error': descriptionFormControl.invalid && (descriptionFormControl.dirty || descriptionFormControl.touched), 'valid': descriptionFormControl.valid && (descriptionFormControl.dirty || descriptionFormControl.touched)}"  [(ngModel)]="education.description" (ngModelChange)="onInputChange()" id="education-description" class="education-description" cols="30" rows="10" placeholder="გთხოვთ, შეიყვანოთ საქმიანობის აღწერა"></textarea>
+        <span [ngClass]="{'error-textarea': descriptionFormControl.invalid && (descriptionFormControl.dirty || descriptionFormControl.touched), 'valid-textarea': descriptionFormControl.valid && (descriptionFormControl.dirty || descriptionFormControl.touched)}"></span>
+        </div>
     </aside>
 </section>
-<hr *ngIf="schoolAdded()">
+<hr>

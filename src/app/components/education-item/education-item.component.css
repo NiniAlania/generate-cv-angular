@@ -12,7 +12,8 @@
 }
 
 
-.school .top-education div {
+.school .top-education div,
+ .school .bottom-education div{
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
