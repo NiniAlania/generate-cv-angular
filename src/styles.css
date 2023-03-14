@@ -23,17 +23,15 @@ span.error {
     width: 23px;
     height: 20px;
     background-repeat: no-repeat;
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
-
-span.error-long {
+span.error-textarea {
     background-image: url("/assets/red-icon.png");
     width: 23px;
     height: 20px;
     background-repeat: no-repeat;
-    margin-left: 720px;
-    margin-top: 12px;
+    margin-top: 60px;
 }
 
 span.valid {
@@ -41,18 +39,17 @@ span.valid {
     width: 23px;
     height: 20px;
     background-repeat: no-repeat;
-    margin-left: 305px;
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
-span.valid-long {
+span.valid-textarea {
     background-image: url("/assets/green-icon.png");
     width: 23px;
     height: 20px;
     background-repeat: no-repeat;
-    margin-left: 720px;
-    margin-top: 12px;
+    margin-top: 60px;
 }
+
 
 h4.error {
     color: red !important;
