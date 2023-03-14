@@ -17,12 +17,12 @@
                     </div>
                 </aside>
                 <aside class="aboutMe">
-                    <h5 *ngIf="profile.description !== ''" class="about-me-title">ჩემ შესახებ</h5>
+                    <h5 *ngIf="profile.description !=='' " class="about-me-title">ჩემ შესახებ</h5>
                     <p [innerText]="profile.description" class="about-me-p"></p>
                 </aside>
             </aside>
             <aside class="resume-photo">
-                <img class="resume-image" [src]="profile.image" alt="">
+                <img *ngIf="profile.image !=='' " class="resume-image" [src]="profile.image" alt="">
             </aside>
         </section>
         <hr class="first-part-hr"  *ngIf="workExperiences.length>0">

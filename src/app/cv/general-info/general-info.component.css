@@ -1,5 +1,5 @@
 section {
-    width: 798px;
+    width: 80%;
     margin-left: 80px;
 }
 
@@ -7,7 +7,9 @@ section .top {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 56px;
+    width: 100%;
 }
+
 
 section .top aside label {
     display: block;
@@ -19,14 +21,14 @@ section .top aside label {
     color: black;
 }
 
-section .top aside .for-iconv {
+section .top aside .for-icon{
     display: flex;
     align-items: center;
 }
 
 section .top aside input {
-    margin-top: 8px;
     width: 300px;
+    margin-top: 8px;
     height: 48px;
     border-radius: 4px;
     background-color: var(--secondary-color);
@@ -157,7 +159,7 @@ section div {
     height: 65px;
     display: flex;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
 }
 .button-div {
     width: 100%;

@@ -21,7 +21,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 330px;
-    margin-left: 65px;
+    margin: 0px 70px;
 }
 
 .bottom-button-edu button {

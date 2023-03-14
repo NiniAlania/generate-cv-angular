@@ -1,0 +1,28 @@
+@media screen and (max-width:500px) {
+
+    .background div span button {
+        width: 200px;
+        height: 70px;
+        font-size: 24px;
+    }
+    
+    .background div span button:hover {
+        font-size: 26px;
+    }
+}
+
+@media screen and (max-width:340px) {
+    .background div h1 {
+        font-size: 22px;
+    }    
+
+    .background div span button {
+        width: 180px;
+        height: 70px;
+        font-size: 22px;
+    }
+    
+    .background div span button:hover {
+        font-size: 24px;
+    }
+}

@@ -11,7 +11,7 @@
         </aside>
         <aside>
             <label [ngClass]="{'error': lastNameFormControl.invalid && (lastNameFormControl.dirty || lastNameFormControl.touched), 'valid': lastNameFormControl.valid && (lastNameFormControl.dirty || lastNameFormControl.touched)}" for="surname">გვარი</label>
-            <div>
+            <div class="for-icon">
                 <input [formControl]="lastNameFormControl" [(ngModel)]="profile.lastName"  (ngModelChange)="onInputChange()" type="text" id="surname" name="surname" placeholder="შეიყვანეთ თქვენი გვარი" [ngClass]="{'error': lastNameFormControl.invalid && (lastNameFormControl.dirty || lastNameFormControl.touched), 'valid': lastNameFormControl.valid && (lastNameFormControl.dirty || lastNameFormControl.touched)}">
                 <span [ngClass]="{'error': lastNameFormControl.invalid && (lastNameFormControl.dirty || lastNameFormControl.touched), 'valid': lastNameFormControl.valid && (lastNameFormControl.dirty || lastNameFormControl.touched)}"></span>
             </div>

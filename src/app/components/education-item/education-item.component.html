@@ -17,9 +17,11 @@
             </div>
         </aside>
         <aside class="end-date">
-            <label [ngClass]="{'error': endDateFormControl.invalid && (endDateFormControl.dirty || endDateFormControl.touched), 'valid': endDateFormControl.valid && (endDateFormControl.dirty || endDateFormControl.touched)}"  for="input-end-date-edu" id="label-end-date-edu">დამთავრების რიცხვი</label>
+            <div class="form">
+                <label [ngClass]="{'error': endDateFormControl.invalid && (endDateFormControl.dirty || endDateFormControl.touched), 'valid': endDateFormControl.valid && (endDateFormControl.dirty || endDateFormControl.touched)}"  for="input-end-date-edu" id="label-end-date-edu">დამთავრების რიცხვი</label>
             <div>
                 <input [formControl]="endDateFormControl" [ngClass]="{'error': endDateFormControl.invalid && (endDateFormControl.dirty || endDateFormControl.touched), 'valid': endDateFormControl.valid && (endDateFormControl.dirty || endDateFormControl.touched)}" [(ngModel)]="education.endDate" (ngModelChange)="onInputChange()" type="date" id="input-end-date-edu" class="input-end-date-edu">
+            </div>
             </div>
         </aside>
     </aside>
