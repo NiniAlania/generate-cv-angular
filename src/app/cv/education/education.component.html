@@ -10,5 +10,5 @@
 </aside>
 <aside class="bottom-button-edu">
     <button (click)="prevPage()" class="back-button-3rd">უკან</button>
-    <button [disabled]="!isValid" (click)="nextPage()" class="finish-button-3rd">დასრულება</button>
+    <button  #checkBtn [disabled]="!isValid" (click)="nextPage()" class="finish-button-3rd">დასრულება</button>
 </aside>

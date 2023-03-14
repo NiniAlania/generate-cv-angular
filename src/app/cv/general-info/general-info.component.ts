@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { defaultProfile, Profile } from 'src/app/models/profile.model';
@@ -11,7 +11,9 @@ import { CvService } from 'src/app/services/cv.service';
 })
 export class GeneralInfoComponent implements OnInit {
   profile: Profile = defaultProfile();
-  
+
+  @ViewChild('checkBtn', { static: true }) checkBtn!: ElementRef; 
+
   firstNameFormControl = new FormControl("", [
     Validators.required,
     Validators.minLength(2),
@@ -67,6 +69,12 @@ export class GeneralInfoComponent implements OnInit {
 
   onInputChange() {
     this.cvService.setProfile(this.profile);
+
+    if (this.isValid()) {
+     (this.checkBtn.nativeElement as HTMLElement).style.cursor = 'pointer';
+    } else {
+       (this.checkBtn.nativeElement as HTMLElement).style.cursor = 'not-allowed';
+    }
   }
 
   onImageSelected(event: any) {
