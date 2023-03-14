@@ -32,7 +32,7 @@ export class GeneralInfoComponent implements OnInit {
   );
 
   descriptionFormControl = new FormControl("", [
-    Validators.pattern("[ა-ჰ]*")
+    Validators.pattern("[ა-ჰ\\s]*")
   ]);
 
   emailFormControl = new FormControl("", [
@@ -94,7 +94,6 @@ export class GeneralInfoComponent implements OnInit {
 
   nextPage() {
     this.router.navigate(["/work-experience"]);
-    console.log("დამეჭირა")
   }
 
 }
