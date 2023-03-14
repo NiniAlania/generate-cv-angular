@@ -129,6 +129,7 @@
     height: 246px;
     margin-top: 48px;
     margin-left: 100px;
+    object-fit: cover;
 }
 
 

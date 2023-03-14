@@ -34,7 +34,6 @@ section .top aside input {
     background-color: var(--secondary-color);
     border: 1px solid #BCBCBC;
     padding-left: 16px;
-    position: absolute;
     outline: none;
     color: var(--primary-color);
 
@@ -58,7 +57,7 @@ section .bottom aside h6 {
 section .bottom .photo {
     margin: 54px 0px ;
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 2fr; 
 }
 
 section .bottom .photo h4 {
@@ -146,7 +145,6 @@ section .bottom aside input {
     line-height: 21px;
     font-weight: 400;
     color: var(--primary-color);
-    position: absolute;
     outline: none;
 }
 
