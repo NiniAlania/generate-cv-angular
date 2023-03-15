@@ -12,8 +12,6 @@ import { CvService } from 'src/app/services/cv.service';
 export class GeneralInfoComponent implements OnInit {
   profile: Profile = defaultProfile();
 
-  @ViewChild('checkBtn', { static: true }) checkBtn!: ElementRef; 
-
   firstNameFormControl = new FormControl("", [
     Validators.required,
     Validators.minLength(2),
@@ -32,7 +30,7 @@ export class GeneralInfoComponent implements OnInit {
   );
 
   descriptionFormControl = new FormControl("", [
-    Validators.pattern("[ა-ჰ\\s]*")
+    Validators.pattern("[ა-ჰ,.!?\\s]*")
   ]);
 
   emailFormControl = new FormControl("", [
@@ -45,35 +43,42 @@ export class GeneralInfoComponent implements OnInit {
     Validators.pattern("^\\+9955\\d{8}$")
   ]);
 
-  constructor(private cvService: CvService, private router: Router) {
-    cvService.profile.subscribe((profile) => {
-      this.profile = profile;
-    })  
-    cvService.restoreCV();
-  }
+  isValid = true;
+
+  constructor(private cvService: CvService, private router: Router) { }
 
   ngOnInit(): void {
+    this.cvService.profile.subscribe((profile) => {
+      this.profile = profile;
+      this.validate();
+    });
+    this.cvService.restoreCV();
   }
 
-  isValid() {
-    return (
-      this.firstNameFormControl.valid && 
-      this.lastNameFormControl.valid && 
+  validate() {
+    if (this.profile.image) {
+      this.photoFormControl.clearValidators();
+    }
+    this.firstNameFormControl.updateValueAndValidity();
+    this.lastNameFormControl.updateValueAndValidity();
+    this.photoFormControl.updateValueAndValidity();
+    this.descriptionFormControl.updateValueAndValidity();
+    this.phoneFormControl.updateValueAndValidity();
+    this.isValid = (
+      this.firstNameFormControl.valid &&
+      this.lastNameFormControl.valid &&
       this.photoFormControl.valid &&
       this.descriptionFormControl.valid &&
-      this.emailFormControl.valid && 
+      this.emailFormControl.valid &&
       this.phoneFormControl.valid
-    )
-    
+    );
   }
 
   onInputChange() {
-    this.cvService.setProfile(this.profile);
+    this.validate();
 
-    if (this.isValid()) {
-     (this.checkBtn.nativeElement as HTMLElement).style.cursor = 'pointer';
-    } else {
-       (this.checkBtn.nativeElement as HTMLElement).style.cursor = 'not-allowed';
+    if (!Object.keys(this.profile).every(key => this.profile[key as keyof Profile] === '')) {
+      this.cvService.setProfile(this.profile);
     }
   }
 

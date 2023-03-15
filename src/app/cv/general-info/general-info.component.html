@@ -48,5 +48,5 @@
     </aside>
 </section>
 <div class="button-div">
-    <button #checkBtn [disabled]="!isValid()" (click)="nextPage()" class="next-button-1st">შემდეგი</button>
+    <button [disabled]="!isValid" [ngStyle]="{ 'cursor': isValid ? 'pointer' : 'not-allowed'}" (click)="nextPage()" class="next-button-1st">შემდეგი</button>
 </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { combineLatest, combineLatestAll } from 'rxjs';
 import { Education } from 'src/app/models/education.model';
 import { Experience } from 'src/app/models/experience.model';
 import { defaultProfile, Profile } from 'src/app/models/profile.model';
@@ -15,20 +16,21 @@ export class ResumeComponent implements OnInit {
   workExperiences: Experience[] = [];
 
   constructor(private cvService: CvService) {
-    cvService.profile.subscribe((profile) => {
-      this.profile = profile;
-    });
-    cvService.education.subscribe((educations) => {
-      this.educations = educations.filter((e) => !Object.keys(e).every(key => e[key as keyof Education] === ''));
-    });
-    cvService.workExperience.subscribe((workExperience) => {
-      this.workExperiences = workExperience.filter((e) => !Object.keys(e).every(key => e[key as keyof Experience] === ''));
-    });
-
-    this.cvService.restoreCV();
+    
   }
 
   ngOnInit(): void {
+    this.cvService.profile.subscribe((profile) => {
+      this.profile = profile;
+    });
+    combineLatest([this.cvService.education, this.cvService.educationValid]).subscribe(([educations, educationsValid]) => {
+      this.educations = educations.filter((e, i) => educationsValid[i]);
+    });
+    
+    combineLatest([this.cvService.workExperience, this.cvService.workExperienceValid]).subscribe(([workExperience, workExperienceValid]) => {
+      this.workExperiences = workExperience.filter((e, i) => workExperienceValid[i]);
+    });
+    
+    this.cvService.restoreCV();
   }
-
 }

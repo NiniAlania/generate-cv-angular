@@ -85,7 +85,7 @@
 }
 
 .first-page-information .aboutMe {
-    margin-top: 30px;
+    margin-top: 50px;
     width: 432px;
     height: 100px;
     display: grid;
@@ -96,7 +96,7 @@
     margin-left: 80px;
     font-family: var(--my-font);
     font-size: 18px;
-    color: var(--resume-color);
+    color: red;
     font-weight: 700;
     line-height: 21.98px;
 }

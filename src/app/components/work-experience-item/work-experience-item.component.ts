@@ -32,34 +32,38 @@ export class WorkExperienceItemComponent implements OnInit {
 
   descriptionFormControl = new FormControl("", [
     Validators.required,
-    Validators.pattern("[ა-ჰ\\s]*")
+    Validators.pattern("[ა-ჰ,.!?\\s]*")
   ]);
 
-  constructor() { }
+  isValid = false;
 
-  ngOnInit(): void {
-    this.workExperienceValid.emit(this.isValid())
+  constructor() {
   }
 
-  isValid() {
-    return (
+  ngOnInit(): void {
+    this.validate();
+    this.workExperienceValid.emit(this.isValid);
+  }
+
+  validate() {
+    this.positionFormControl.updateValueAndValidity();
+    this.employerFormControl.updateValueAndValidity();
+    this.startDateFormControl.updateValueAndValidity();
+    this.endDateFormControl.updateValueAndValidity();
+    this.descriptionFormControl.updateValueAndValidity();
+
+    this.isValid = (
       this.positionFormControl.valid &&
       this.employerFormControl.valid &&
       this.startDateFormControl.valid &&
       this.endDateFormControl.valid &&
       this.descriptionFormControl.valid
-    ) || (
-      this.positionFormControl.pristine && 
-      this.employerFormControl.pristine &&
-      this.startDateFormControl.pristine &&
-      this.endDateFormControl.pristine &&
-      this.descriptionFormControl.pristine
     );
   }
 
   onInputChange() {
+    this.validate();
     this.workExperienceChanged.emit(this.workExperience);
-    this.workExperienceValid.emit(this.isValid());
+    this.workExperienceValid.emit(this.isValid);
   }
-
 }

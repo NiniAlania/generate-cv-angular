@@ -10,5 +10,5 @@
 </aside>
 <aside class="bottom-button">
     <button (click)="prevPage()" class="back-button-2nd">უკან</button>
-    <button [disabled]="!isValid" (click)="nextPage()" class="next-button-2nd">შემდეგი</button>
+    <button [disabled]="!isValid" [ngStyle]="{ 'cursor': isValid ? 'pointer' : 'not-allowed'}" (click)="nextPage()" class="next-button-2nd">შემდეგი</button>
 </aside>

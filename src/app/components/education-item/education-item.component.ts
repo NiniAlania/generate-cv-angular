@@ -15,7 +15,7 @@ export class EducationItemComponent implements OnInit {
   
   institutionFormControl = new FormControl("", [
     Validators.required,
-    Validators.pattern("[ა-ჰ\\s]*")
+    Validators.pattern("[ა-ჰ,\\s]*")
   ]);
 
   startDateFormControl = new FormControl("", [
@@ -28,32 +28,35 @@ export class EducationItemComponent implements OnInit {
 
   descriptionFormControl = new FormControl("", [
     Validators.required,
-    Validators.pattern("[ა-ჰ\\s]*")
+    Validators.pattern("[ა-ჰ,.!?\\s]*")
   ]);
+
+  isValid = false;
 
   constructor() { }
 
   ngOnInit(): void {
-    this.educationValid.emit(this.isValid())
+    this.validate();
+    this.educationValid.emit(this.isValid);
   }
 
-  isValid() {
-    return (
+  validate() {
+    this.institutionFormControl.updateValueAndValidity();
+    this.startDateFormControl.updateValueAndValidity();
+    this.endDateFormControl.updateValueAndValidity();
+    this.descriptionFormControl.updateValueAndValidity();
+
+    this.isValid = (
       this.institutionFormControl.valid &&
       this.startDateFormControl.valid &&
       this.endDateFormControl.valid &&
       this.descriptionFormControl.valid
-    ) || (
-      this.institutionFormControl.pristine && 
-      this.startDateFormControl.pristine && 
-      this.endDateFormControl.pristine &&
-      this.descriptionFormControl.pristine
     );
   }
 
   onInputChange() {
+    this.validate();
     this.educationChanged.emit(this.education);
-    this.educationValid.emit(this.isValid());
+    this.educationValid.emit(this.isValid);
   }
-
 }

@@ -39,25 +39,32 @@ export class CvService {
   }
 
   setEducationValid(valid: boolean[]) {
+    if (valid.length > 0) {
+      this.sessionStorage.store('educationValid', valid);
+    }
     this.educationValidSource.next(valid);
   }
 
   setWorkExperience(workExperience: Experience[]) {
-    const filteredExperience = workExperience.filter((e) => !Object.keys(e).every(key => e[key as keyof Experience] === ''));
-    if (filteredExperience.length > 0) {
-      this.sessionStorage.store('workExperience', filteredExperience);
+    if (workExperience.length > 0) {
+      this.sessionStorage.store('workExperience', workExperience);
     }
     this.workExperienceSource.next(workExperience);
   }
 
   setWorkExperienceValid(valid: boolean[]) {
+    if (valid.length > 0) {
+      this.sessionStorage.store('workExperienceValid', valid);
+    }
     this.workExperienceValidSource.next(valid);
   }
 
   restoreCV() {
     const profile = this.sessionStorage.retrieve('profile');
     const education = this.sessionStorage.retrieve('education');
+    const educationValid = this.sessionStorage.retrieve('educationValid');
     const workExperience = this.sessionStorage.retrieve('workExperience');
+    const workExperienceValid = this.sessionStorage.retrieve('workExperienceValid');
 
     if (profile) {
       this.profileSource.next(profile);
@@ -65,22 +72,26 @@ export class CvService {
 
     if (education) {
       this.educationSource.next(education);
-      this.educationValidSource.next(education.map(() => true));
+      this.educationValidSource.next(educationValid);
     }
 
     if (workExperience) {
       this.workExperienceSource.next(workExperience);
-      this.workExperienceValidSource.next(workExperience.map(() => true));
+      this.workExperienceValidSource.next(workExperienceValid);
     }
   }
 
   clearCV() {
     this.sessionStorage.clear('profile');
     this.sessionStorage.clear('education');
+    this.sessionStorage.clear('educationValid');
     this.sessionStorage.clear('workExperience');
+    this.sessionStorage.clear('workExperienceValid');
     this.profileSource.next(defaultProfile());
     this.educationSource.next([defaultEducation()]);
+    this.educationValidSource.next([false]);
     this.workExperienceSource.next([defaultExperience()]);
+    this.workExperienceValidSource.next([false]);
   }
 
   saveCV() {
