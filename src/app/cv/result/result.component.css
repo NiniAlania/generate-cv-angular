@@ -3,10 +3,16 @@ section {
     grid-template-rows: 7fr 1fr;
 }
 
+.vector {
+    width: 20px;
+    height: 100px;
+    padding-top: 80px;
+}
+
 section div {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
 
 }
 

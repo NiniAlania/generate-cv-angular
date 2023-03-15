@@ -1,6 +1,8 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
+import { CvService } from 'src/app/services/cv.service';
 
 @Component({
   selector: 'app-result',
@@ -9,7 +11,7 @@ import jsPDF from 'jspdf';
 })
 export class ResultComponent implements OnInit {
 
-  constructor() { }
+  constructor(private cvService: CvService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -26,6 +28,11 @@ export class ResultComponent implements OnInit {
       PDF.addImage(FILEURI, 'PNG', 0, position, fileWidth, fileHeight);
       PDF.save('cv.pdf');
     });
+  }
+
+  goToHomePage() {
+    this.cvService.clearCV();
+    this.router.navigate(["/"]);
   }
 
 }
